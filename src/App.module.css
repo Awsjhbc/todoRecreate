@@ -1,0 +1,160 @@
+.todoMain {
+  display: flex;
+  width: auto;
+  height: 1024px;
+  background: var(--gray-600, #1a1a1a);
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  background: var(--gray-700, #0d0d0d);
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  width: 126px;
+  height: 48px;
+  align-items: flex-end;
+}
+
+.leftLogo,
+.rightLogo {
+  float: left;
+  margin: 0;
+}
+
+.leftLogo {
+  color: var(--blue, #4ea8de);
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.rightLogo {
+  color: var(--purple-dark, #5e60ce);
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+img {
+  width: 22px;
+  height: 36px;
+  flex-shrink: 0;
+  padding-right: 12px;
+}
+
+.todoPanel {
+  display: flex;
+  width: 736px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 91px;
+}
+
+.todoInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-self: stretch;
+}
+
+.todoCreated {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.createdText {
+  color: var(--blue, #4ea8de);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.createdCount {
+  display: flex;
+  padding: 2px 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 999px;
+  background: var(--gray-400, #333);
+
+  color: var(--gray-200, #d9d9d9);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.todoCompleted {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.completedText {
+  color: var(--purple, #8284fa);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.todoEmpty {
+  display: flex;
+  padding: 64px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+
+  border-radius: 8px;
+  border-top: 1px solid var(--grey-400, #333);
+}
+
+.emptyText {
+  align-self: stretch;
+
+  color: var(--gray-300, #808080);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 22.4px */
+
+  color: var(--gray-300, #808080);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.boardIcon {
+  width: 56px;
+  height: 56px;
+}
