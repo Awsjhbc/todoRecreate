@@ -7,53 +7,6 @@
   align-items: center;
 }
 
-.header {
-  display: flex;
-  width: 100%;
-  height: 200px;
-  background: var(--gray-700, #0d0d0d);
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  display: flex;
-  width: 126px;
-  height: 48px;
-  align-items: flex-end;
-}
-
-.leftLogo,
-.rightLogo {
-  float: left;
-  margin: 0;
-}
-
-.leftLogo {
-  color: var(--blue, #4ea8de);
-  font-family: Inter;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-}
-
-.rightLogo {
-  color: var(--purple-dark, #5e60ce);
-  font-family: Inter;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-}
-
-img {
-  width: 22px;
-  height: 36px;
-  flex-shrink: 0;
-  padding-right: 12px;
-}
-
 .todoPanel {
   display: flex;
   width: 736px;

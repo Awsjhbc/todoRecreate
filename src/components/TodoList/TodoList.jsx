@@ -2,6 +2,7 @@ import { useContext } from "react";
 import MyContext from "../../utils/MyContext";
 import TodoItem from "./TodoItem/TodoItem";
 import styles from "./TodoList.module.css";
+import EditTodoItem from "./TodoItem/EditTodoItem/EditTodoItem";
 
 const TodoList = () => {
   const {
@@ -9,31 +10,39 @@ const TodoList = () => {
     deleteTodo,
     editedTodo,
     onChecked,
-    isEditing,
+    setEditedTodo,
     cancelEditing,
     handleEditTodoChange,
     saveEditedTodo,
-    setIsEditing,
+    editTodoName,
   } = useContext(MyContext);
   return (
     <>
       <ul className={styles.todoList}>
-        {todos.map((todo, id) => (
-          <li className={styles.todoListItem} key={id}>
-            <TodoItem
+        {todos.map((todo, id) =>
+          editedTodo === todo.id ? (
+            <EditTodoItem
               todo={todo}
-              deleteTodo={deleteTodo}
-              onChecked={onChecked}
-              isEditing={isEditing}
-              cancelEditing={cancelEditing}
+              key={id}
+              editedTodo={editedTodo}
               handleEditTodoChange={handleEditTodoChange}
               saveEditedTodo={saveEditedTodo}
-              editedTodo={editedTodo}
-              setIsEditing={setIsEditing}
-              isChecked={todo.checked}
+              cancelEditing={cancelEditing}
+              editTodoName={editTodoName}
             />
-          </li>
-        ))}
+          ) : (
+            <li className={styles.todoListItem} key={id}>
+              <TodoItem
+                todo={todo}
+                deleteTodo={deleteTodo}
+                onChecked={onChecked}
+                handleEditTodoChange={handleEditTodoChange}
+                isChecked={todo.checked}
+                setEditedTodo={setEditedTodo}
+              />
+            </li>
+          )
+        )}
       </ul>
     </>
   );

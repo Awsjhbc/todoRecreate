@@ -6,61 +6,37 @@ import classNames from "classnames";
 const TodoItem = ({
   todo,
   deleteTodo,
-  editedTodo,
   onChecked,
-  isEditing,
-  cancelEditing,
-  handleEditTodoChange,
-  saveEditedTodo,
-  setIsEditing,
   isChecked,
+  setEditedTodo,
 }) => {
   return (
     <>
       <div className={styles.todoItem}>
-        {isEditing === todo.id ? (
-          <>
+        <>
+          <label
+            className={classNames(styles.label, {
+              [styles.checked]: isChecked,
+            })}
+          >
             <input
-              type="text"
-              value={editedTodo}
-              onChange={handleEditTodoChange}
-              className={styles.inputValue}
+              type="checkbox"
+              className={styles.checkboxNone}
+              checked={isChecked}
+              onChange={() => onChecked(todo.id)}
             />
-            <div className={styles.editBtn}>
-              <ItemButton onClick={() => saveEditedTodo(todo, todo.id)}>
-                <span className={styles.saveIcon}></span>
-              </ItemButton>
-              <ItemButton onClick={() => cancelEditing()}>
-                <span className={styles.cancelIcon}></span>
-              </ItemButton>
-            </div>
-          </>
-        ) : (
-          <>
-            <label
-              className={classNames(styles.label, {
-                [styles.checked]: isChecked,
-              })}
-            >
-              <input
-                type="checkbox"
-                className={styles.checkboxNone}
-                checked={isChecked}
-                onChange={() => onChecked(todo.id)}
-              />
-              <span className={styles.customCheckbox}></span>
-              {todo.description}
-            </label>
-            <div className={styles.itemButtons}>
-              <ItemButton onClick={() => setIsEditing(todo.id)}>
-                <span className={styles.lopataIcon}></span>
-              </ItemButton>
-              <ItemButton onClick={() => deleteTodo(todo.id)}>
-                <span className={styles.trashIcon}></span>
-              </ItemButton>
-            </div>
-          </>
-        )}
+            <span className={styles.customCheckbox}></span>
+            {todo.description}
+          </label>
+          <div className={styles.itemButtons}>
+            <ItemButton onClick={() => setEditedTodo(todo.id)}>
+              <span className={styles.lopataIcon}></span>
+            </ItemButton>
+            <ItemButton onClick={() => deleteTodo(todo.id)}>
+              <span className={styles.trashIcon}></span>
+            </ItemButton>
+          </div>
+        </>
       </div>
     </>
   );
