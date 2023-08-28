@@ -1,12 +1,13 @@
-import styles from "./AddTodoForm.module.css";
-import Button from "./AddTodoButton/AddTodoButton";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
+
 import plusIcon from "../../assets/plusIcon.svg";
-import { useContext, useState } from "react";
-import MyContext from "../../utils/MyContext";
+import { useTodoContext } from "../../utils/MyContext";
+import Button from "./AddTodoButton/AddTodoButton";
+import styles from "./AddTodoForm.module.css";
 
 const AddTodoForm = () => {
-  const { addTodo } = useContext(MyContext);
-
+  const { addTodo } = useTodoContext();
   const [value, setValue] = useState("");
 
   const handleSubmit = (event) => {

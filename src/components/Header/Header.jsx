@@ -1,5 +1,5 @@
-import styles from "./Header.module.css";
 import rocket from "../../assets/rocket.svg";
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (

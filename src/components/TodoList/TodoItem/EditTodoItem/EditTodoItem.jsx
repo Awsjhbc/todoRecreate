@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
-import styles from "./EditTodoItem.module.css";
-import ItemButton from "../ItemButton/ItemButton";
 import { useState } from "react";
 
-const EditTodoItem = ({ todo, cancelEditing, editTodoName }) => {
+import ItemButton from "../ItemButton/ItemButton";
+import styles from "./EditTodoItem.module.css";
+
+const EditTodoItem = ({ todo, editTodoName, cancelEditing }) => {
   const [value, setValue] = useState(todo.description);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     editTodoName(value, todo.id);
-    cancelEditing();
   };
 
   return (
@@ -24,7 +24,7 @@ const EditTodoItem = ({ todo, cancelEditing, editTodoName }) => {
         <ItemButton type="submit">
           <span className={styles.saveIcon}></span>
         </ItemButton>
-        <ItemButton type="submit">
+        <ItemButton type="button" onClick={() => cancelEditing()}>
           <span className={styles.cancelIcon}></span>
         </ItemButton>
       </div>

@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
-import styles from "./TodoItem.module.css";
-import ItemButton from "./ItemButton/ItemButton";
 import classNames from "classnames";
+
+import ItemButton from "./ItemButton/ItemButton";
+import styles from "./TodoItem.module.css";
 
 const TodoItem = ({
   todo,
-  deleteTodo,
-  onChecked,
   isChecked,
+  onChecked,
   setEditedTodo,
+  deleteTodo,
 }) => {
   return (
     <>
